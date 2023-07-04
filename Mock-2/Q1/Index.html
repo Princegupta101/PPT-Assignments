@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+
+    <style>
+
+.static-position {
+  position: static;
+  height: 200px;
+  width: 200px;
+  background-color: aqua;
+}
+
+.fixed-position {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  height: 200px;
+  width: 200px;
+  background-color: red;
+}
+
+.sticky-position {
+  position: sticky;
+  top: 50px;
+  height: 200px;
+  width: 200px;
+  background-color: blue;
+}
+
+.relative-position {
+  position: relative;
+  left: 50px;
+  top: 20px;
+  height: 200px;
+  width: 200px;
+  background-color: blueviolet;
+}
+
+.parent {
+  position: relative;
+}
+
+.absolute-position {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  height: 200px;
+  width: 200px;
+  background-color: yellow;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <!--The static position is the default position for HTML elements. The element will be displayed in the normal flow of the document. It will not be affected by the top, bottom, left, or right properties.-->
+    <div class="static-position">
+        This is a static positioned element.
+      </div>
+      
+
+      <!--A fixed positioned element is positioned relative to the viewport, which means it will stay in the same position even when the page is scrolled-->
+      <div class="fixed-position">
+        This is a fixed positioned element.
+      </div>
+
+
+
+      <!--A sticky positioned element is positioned based on the user's scroll position. It acts like a relative position until it reaches a specified threshold-->
+      <div class="sticky-position">
+        This is a sticky positioned element.
+      </div>
+      
+
+      <!--A relative positioned element is positioned relative to its normal position. The element still occupies space in the normal flow, but you can modify its position using the top, bottom, left, or right properties-->
+      <div class="relative-position">
+        This is a relative positioned element.
+      </div>
+      
+
+      <!--An absolutely positioned element is positioned relative to its nearest positioned ancestor -->
+      <div class="parent">
+        <div class="absolute-position">
+          This is an absolutely positioned element.
+        </div>
+      </div>
+</body>
+</html>
