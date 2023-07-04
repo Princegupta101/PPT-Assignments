@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@400;600;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.discount {
+  background-color: black;
+  color: white;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Ysabeau Infant", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  height: 5%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  font-family: "Ysabeau Infant", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.menu ul li {
+  padding: 0 20px;
+}
+
+.logo {
+  margin: 2% 16%;
+}
+.logo img {
+  height: 40px;
+}
+
+.pad-20 {
+  margin: 0 15px;
+}
+
+button {
+  padding: 14px 25px;
+  border-radius: 35px;
+  font-family: "Rubik", sans-serif;
+  font-family: "Ysabeau Infant", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.yellow {
+  background-color: rgb(246, 218, 5);
+}
+
+main {
+  display: flex;
+}
+
+.left {
+  width: 50%;
+  margin-top: 10%;
+  font-family: "Ysabeau Infant", sans-serif;
+}
+
+.left section {
+  margin-left: 10%;
+}
+
+.left section div {
+  font-size: 14px;
+  font-size: 600;
+}
+
+.left section h1 {
+  font-size: 46px;
+  font-weight: 400;
+
+  font-family: "Playfair Display", serif;
+  letter-spacing: -0.0625rem;
+}
+
+.left section p {
+  font-size: 25px;
+  margin-bottom: 5%;
+}
+
+.right {
+  width: 50%;
+}
+.right img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
