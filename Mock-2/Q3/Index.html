@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execution context</title>
+</head>
+<body>
+    
+<h1>Execution Context</h1>
+<p>Execution context is the concept for describing the internal working of a code.</p>
+
+
+<h3>Example</h3>
+
+<img src="fun.jpg" alt="">
+
+<p>var x = 10;
+ <br>
+    function foo(a, b) { <br>
+      var y = 5; <br>
+      console.log(a + b + x + y); <br>
+    }
+    
+    foo(3, 2); <br>
+    </p>
+
+    <div>
+        
+        
+         <h3>Global Execution Context:</h3>
+           - When the script is loaded, the global execution context is created. It includes the global object (`window` in a browser environment) and the global scope. <br>
+           - In this example, the variable `x` is declared in the global scope and assigned a value of 10. <br>
+        
+           
+        <h3> Function Execution Context (foo): </h3>
+                  - When the `foo` function is invoked (`foo(3, 2)`), a new function execution context is created for `foo`. <br>
+           - The function execution context for `foo` includes the function arguments (`a = 3` and `b = 2`), local variables, and inner functions. <br>
+           - Inside the `foo` function, the variable `y` is declared in the function's scope and assigned a value of 5.
+        
+     <h3>Console Log:</h3>
+           - Within the `foo` function, the `console.log(a + b + x + y)` statement is executed. <br>
+           - The JavaScript engine starts resolving variables and expressions within the current execution context. <br>
+           - It first looks for `a` and `b` in the function's scope and finds their respective values (`3` and `2`). <br>
+           - Next, it looks for `x` within the function's scope but doesn't find it. So, it goes up the scope chain to the global scope and finds the value of `x` as `10`. <br>
+           - Similarly, it looks for `y` within the function's scope and finds its value as `5`. <br>
+           - The expression `a + b + x + y` is evaluated to `3 + 2 + 10 + 5`, resulting in `20`. <br>
+           - Finally, the value `20` is passed to the `console.log` function, and it gets printed in the console. <br>
+        
+        <h3>Execution Context Cleanup:</h3>
+           - Once the execution of the `console.log` statement is completed, the function execution context for `foo` is no longer needed. <br>
+           - The JavaScript engine pops the function execution context off the execution stack, and control returns to the global execution context. <br>
+           - The program continues to execute any remaining code in the global scope.
+         <br> <br> <br>
+        This example demonstrates how the execution context is created and used in JavaScript. Each time a function is invoked, a new function execution context is created and added to the execution stack. The execution context keeps track of variables, functions, and the scope chain to ensure proper variable resolution and access. Once a function completes its execution, its execution context is removed from the stack, and control returns to the previous execution context.</div>
+
+</body>
+</html>
