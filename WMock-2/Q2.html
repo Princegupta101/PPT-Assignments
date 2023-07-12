@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <input type="text" id="textInput">
+    <button onclick="addItem()">Submit</button>
+  </div>
+  <ul id="list"></ul>
+
+  <script>
+    function addItem() {
+      var input = document.getElementById('textInput');
+      var value = input.value.trim();
+
+      if (value !== '') {
+        var listItem = document.createElement('li');
+        listItem.textContent = value;
+
+        var list = document.getElementById('list');
+        list.appendChild(listItem);
+
+        input.value = '';
+      }
+    }
+  </script>
+</body>
+</html>

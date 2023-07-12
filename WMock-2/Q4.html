@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Navbar styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: #f2f2f2;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .navbar-menu {
+      display: none;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-menu li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .navbar-menu li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* Hamburger menu styles */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color
+    }
+
+    /* Hamburger menu styles */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin-bottom: 5px;
+    }
+
+    /* Media queries for responsive behavior */
+    @media screen and (max-width: 600px) {
+      .navbar-menu {
+        display: none;
+      }
+
+      .navbar-menu.active {
+        display: block;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">Logo</div>
+    <div class="navbar-menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+
+  <script>
+    // Toggle the navbar menu on click of the hamburger icon
+    const hamburger = document.querySelector('.hamburger');
+    const navbarMenu = document.querySelector('.navbar-menu');
+
+    hamburger.addEventListener('click', function() {
+      navbarMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

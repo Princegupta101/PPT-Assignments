@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <form id="myForm" onsubmit="validateForm(event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+    <div id="nameError" class="error"></div>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    <div id="emailError" class="error"></div>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" required>
+    <div id="phoneError" class="error"></div>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+    <div id="passwordError" class="error"></div>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" required>
+    <div id="ageError" class="error"></div>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" required>
+      <option value="">Select</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+    <div id="genderError" class="error"></div>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" required>
+    <div id="dobError" class="error"></div>
+
+    <label for="color">Favorite Color:</label>
+    <input type="color" id="color" required>
+    <div id="colorError" class="error"></div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function validateForm(event) {
+      event.preventDefault();
+
+      const form = document.getElementById('myForm');
+
+      // Reset previous errors
+      const errorElements = form.getElementsByClassName('error');
+      for (let i = 0; i < errorElements.length; i++) {
+        errorElements[i].textContent = '';
+      }
+
+      // Validate each field
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const phoneInput = document.getElementById('phone');
+      const passwordInput = document.getElementById('password');
+      const ageInput = document.getElementById('age');
+      const genderInput = document.getElementById('gender');
+      const dobInput = document.getElementById('dob');
+      const colorInput = document.getElementById('color');
+
+      if (!nameInput.value) {
+        showError('nameError', 'Please enter your name');
+      }
+
+      if (!emailInput.value) {
+        showError('emailError', 'Please enter your email');
+      } else if (!validateEmail(emailInput.value)) {
+        showError('emailError', 'Please enter a valid email address');
+      }
+
+      if (!phoneInput.value) {
+        showError('phoneError', 'Please enter your phone number');
+      }
+
+      if (!passwordInput.value) {
+        showError('passwordError', 'Please enter a password');
+      }
+
+      if (!ageInput.value) {
+        showError('ageError', 'Please enter your age');
+      } else if (isNaN(ageInput.value) || ageInput.value < 1) {
+        showError('ageError', 'Please enter a valid age');
+      }
+
+      if (!genderInput.value) {
+        showError('genderError', 'Please select your gender');
+      }
+
+      if (!dobInput.value) {
+        showError('dobError', 'Please enter your date of birth');
+      }
+
+      if (!colorInput.value) {
+        showError('colorError', 'Please select your favorite color');
+      }
+
+      if (form.checkValidity()) {
+        // If all fields are valid, submit the form
+        form.submit();
+      }
+    }
+
+    function showError(errorElementId, errorMessage) {
+      const errorElement = document.getElementById(errorElementId);
+      errorElement.textContent = errorMessage;
+    }
+
+    function validateEmail(email) {
+      // Simple email validation regex pattern
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailPattern.test(email);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 20% auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      max-width: 400px;
+    }
+
+    .close-button {
+      align-self: flex-end;
+      cursor: pointer;
+    }
+
+    /* Remove scrolling when modal is open */
+    body.modal-open {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="openModal()">Open Modal</button>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <h3>Modal Title</h3>
+      <p>This is the modal content.</p>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById
